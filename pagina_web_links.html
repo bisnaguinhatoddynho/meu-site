@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Página de Links Úteis</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: url('/mnt/data/94069efe-feb2-4830-8e70-e8dd23467076.png') no-repeat center center fixed;
+            background-size: cover;
+            color: #f5f5f5;
+            text-shadow: 2px 2px 6px #000;
+            animation: fadeIn 2s ease-in-out;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        .container {
+            backdrop-filter: blur(6px);
+            background-color: rgba(0,0,0,0.5);
+            padding: 25px;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 420px;
+            margin: 100px auto;
+            text-align: center;
+            animation: slideDown 1.2s ease;
+        }
+        @keyframes slideDown {
+            0% { transform: translateY(-40px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+        a {
+            display: block;
+            margin: 12px 0;
+            padding: 12px;
+            background: rgba(255,255,255,0.25);
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            transition: 0.3s;
+            animation: fadeIn 1.5s ease;
+        }
+        a:hover {
+            background: rgba(255,255,255,0.4);
+            transform: scale(1.05);
+        }
+        #clock {
+            font-size: 1.6em;
+            margin-top: 20px;
+            font-weight: bold;
+            animation: fadeIn 2s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Boas-vindas Gabriel, qual a boa de hoje?</h2>
+
+        <a href="https://wa.me/" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/whatsapp.svg" width="22" style="vertical-align:middle; margin-right:8px; filter: invert(1);"/>WhatsApp</a>
+        <a href="https://www.tiktok.com" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg" width="22" style="vertical-align:middle; margin-right:8px; filter: invert(1);"/>TikTok</a>
+        <a href="https://www.instagram.com" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" width="22" style="vertical-align:middle; margin-right:8px; filter: invert(1);"/>Instagram</a>
+        <a href="https://www.youtube.com" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/youtube.svg" width="22" style="vertical-align:middle; margin-right:8px; filter: invert(1);"/>YouTube</a>
+        <a href="https://classroom.google.com" target="_blank"><img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/googleclassroom.svg" width="22" style="vertical-align:middle; margin-right:8px; filter: invert(1);"/>Google Classroom</a>
+
+        <div id="clock"></div>
+    </div>
+
+    <script>
+        function updateClock() {
+            const options = {
+                timeZone: 'America/Sao_Paulo',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit'
+            };
+            const now = new Intl.DateTimeFormat('pt-BR', options).format(new Date());
+            document.getElementById('clock').textContent = now;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
+</body>
+</html>
